@@ -8,3 +8,8 @@ class SixpackParticipant(models.Model):
     bucket = models.CharField(max_length=255)
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = (
+            ('experiment_name', 'unique_attr', )
+        )
